@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name="classic_nb_ou_branding",
     packages=["classic_nb_ou_branding"],
-    version='0.0.1',
+    version='0.0.2',
     author="Tony Hirst",
     author_email="tony.hirst@gmail.com",
     description="Install OU custom brnading for classic Jupyter notebook.",
