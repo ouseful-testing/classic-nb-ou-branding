@@ -4,7 +4,8 @@ import shutil
 import sys
 import subprocess
 from pathlib import Path
-import jupyter_core
+#import jupyter_core
+import json
 
 @click.group()
 def cli():
@@ -26,13 +27,22 @@ def install(conda):
     # Then have a cli arg that lets you install to an env?
     # eg list includes:
     # '/Users/tonyhirst/opt/miniconda3/envs/r_env/etc/jupyter',
-    
+    # jupyter-core.paths is a new thing
+    # and we can't risk upgrading jupyter-core?
     if conda:
-        paths = jupyter_core.paths.jupyter_config_path()
+        #paths = jupyter_core.paths.jupyter_config_path()
+        dest = subprocess.run(['jupyter', '--paths', '--json'], stdout=subprocess.PIPE)
+        paths = json.loads(dest.stdout.decode('utf-8'))["config"]
+        found = False
         for path in paths:
             if f"envs/{conda}" in path:
-                dest = path
+                found = True
+                dest = Path(path)
                 break
+        if not found:
+            # TO DO raise a proper warning
+            print(f"No environment found called {conda}")
+            exit(-1)
     else:
         dest = subprocess.run(['jupyter', '--config-dir'], stdout=subprocess.PIPE)
         dest = Path(dest.stdout.decode('utf-8').strip())
