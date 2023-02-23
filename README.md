@@ -1,7 +1,7 @@
 # classic-nb-ou-branding
 Simple script to install OU branding to Jupyter `nbclassic` notebooks
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ouseful-testing/classic-nb-ou-branding/HEAD?labpath=tree)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ouseful-testing/classic-nb-ou-branding/HEAD?urlpath=tree)
 
 <img width="536" alt="image" src="https://user-images.githubusercontent.com/82988/220650261-d03ea376-9c0d-4412-8381-5d6893937bd2.png">
 
