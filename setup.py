@@ -6,7 +6,7 @@ setup(
     version='0.0.4',
     author="Tony Hirst",
     author_email="tony.hirst@gmail.com",
-    description="Install OU custom brnading for classic Jupyter notebook.",
+    description="Install OU custom branding for classic Jupyter notebook.",
     long_description='''
     A simple "dummy" package that installs custom branding elements for classic Jupyter notebook.
     ''',
